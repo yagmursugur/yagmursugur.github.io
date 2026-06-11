@@ -163,6 +163,31 @@ carousel.addEventListener("mouseleave", startTimer);
 renderCarousel();
 startTimer();
 
+const revealItems = document.querySelectorAll(
+  ".reveal, .skill-board article, .program-grid article"
+);
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.16, rootMargin: "0px 0px -60px 0px" }
+  );
+
+  revealItems.forEach((item) => {
+    item.classList.add("reveal");
+    revealObserver.observe(item);
+  });
+} else {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
 closeButton.addEventListener("click", () => {
   lightbox.close();
 });

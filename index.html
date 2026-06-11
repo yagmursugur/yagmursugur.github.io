@@ -8,6 +8,7 @@
       content="Yağmur Süğür endüstriyel tasarım portfolyosu. Ürün tasarımı, 3D modelleme, render, teknik çizim, prototipleme ve ürün görselleştirme çalışmaları."
     />
     <title>Yağmur Süğür | Industrial Design Portfolio</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +19,6 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Ana sayfa">YS</a>
       <nav class="nav" aria-label="Ana menü">
         <a href="#portfolio">Portfolyo</a>
         <a href="#skills">Yetenekler</a>
@@ -33,17 +33,25 @@
         <div class="mesh mesh-violet"></div>
         <div class="mesh mesh-mint"></div>
 
-        <div class="hero-panel">
+        <div class="hero-panel reveal">
           <div class="hero-copy">
             <p class="eyebrow">Endüstriyel Tasarımcı</p>
-            <h1>Endüstriyel tasarım, ürün fikrinden sunuma.</h1>
+            <h1>Ürün fikrinden sunuma.</h1>
             <p>
-              3D modelleme, render, teknik çizim ve üretime hazırlık süreçlerinde
-              sade, uygulanabilir ve güçlü ürün anlatımları.
+              Kullanım, form ve üretilebilirlik kararlarını sade bir tasarım diliyle
+              okunabilir ürün hikayelerine dönüştürür.
             </p>
             <div class="hero-actions">
               <a class="button primary" href="#portfolio">Portfolyo</a>
               <a class="button secondary" href="#contact">İletişim</a>
+              <a
+                class="button secondary"
+                href="https://www.linkedin.com/in/yagmursugur/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
               <a
                 class="button ghost"
                 href="assets/cv/Yagmur_Sugur_CV_2026.pdf"
@@ -59,25 +67,25 @@
             <img src="assets/profile/yagmur-sugur.webp" alt="Yağmur Süğür portre fotoğrafı" />
             <div>
               <p class="profile-name">Yağmur Süğür</p>
-              <p>Ürün tasarımı, görselleştirme ve görsel iletişim arasında net çözümler üretir.</p>
+              <p>Endüstriyel tasarım, ürün görselleştirme ve sunum odaklı tasarım çalışmaları.</p>
             </div>
           </aside>
         </div>
       </section>
 
-      <section class="statement">
+      <section class="statement reveal">
         <p class="section-kicker">Yaklaşım</p>
-        <h2>Eskiz, model, render ve dokümantasyon aynı ürün hikayesini taşır.</h2>
+        <h2>Tasarım sürecini fikirden anlaşılır ürüne taşır.</h2>
         <p>
-          Kullanım, ergonomi, malzeme ve üretilebilirlik kararlarını birlikte düşünerek
-          okunabilir ve sunuma hazır ürün çalışmaları geliştiriyorum.
+          Eskiz, modelleme, render ve dokümantasyonu aynı ürün hikayesinin parçaları
+          olarak ele alır. Kullanım, ergonomi, malzeme ve üretilebilirlik kararlarını
+          birlikte düşünerek sunuma hazır çalışmalar geliştirir.
         </p>
       </section>
 
-      <section id="skills" class="skills-section">
-        <div class="section-heading">
+      <section id="skills" class="skills-section reveal">
+        <div class="section-heading compact-heading">
           <p class="section-kicker">Yetenekler</p>
-          <h2>Ürün geliştirme akışını taşıyan temel alanlar.</h2>
         </div>
         <div class="skill-board">
           <article>
@@ -85,7 +93,7 @@
               <svg viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Zm0 2.4 5.1 2.6L12 10.6 6.9 8 12 5.4ZM6 10.2l5 2.5v5.6l-5-2.5v-5.6Zm12 0v5.6l-5 2.5v-5.6l5-2.5Z"/></svg>
             </span>
             <h3>Ürün Geliştirme</h3>
-            <p>Endüstriyel tasarım, ürün tasarımı, konsept geliştirme ve form araştırması.</p>
+            <p>Endüstriyel tasarım, konsept geliştirme, form araştırması ve ürün ailesi kurgusu.</p>
           </article>
           <article>
             <span class="skill-icon" aria-hidden="true">
@@ -99,15 +107,12 @@
               <svg viewBox="0 0 24 24"><path d="M4 5h16v3H4V5Zm2 5h12v9H6v-9Zm2 2v5h8v-5H8Zm1-9h6v1H9V3Z"/></svg>
             </span>
             <h3>Üretim & Dokümantasyon</h3>
-            <p>Malzeme bilgisi, parça tasarımı, mobilya ürün tasarımı ve ürün dokümantasyonu.</p>
+            <p>Malzeme, parça tasarımı, mobilya ürün tasarımı ve ürün dokümantasyonu.</p>
           </article>
         </div>
 
-        <div class="program-section">
-          <div>
-            <p class="section-kicker">Programlar</p>
-            <h2>Kullandığı araçlar.</h2>
-          </div>
+        <div class="program-section reveal">
+          <p class="section-kicker">Programlar</p>
           <div class="program-grid">
             <article><img src="assets/logos/autodesk.svg" alt="" /><span>Fusion 360</span></article>
             <article><img src="assets/logos/rhinoceros.svg" alt="" /><span>Rhino</span></article>
@@ -120,10 +125,10 @@
         </div>
       </section>
 
-      <section id="portfolio" class="portfolio-section">
+      <section id="portfolio" class="portfolio-section reveal">
         <div class="section-heading">
           <p class="section-kicker">Portfolyo</p>
-          <h2>Seçilmiş ürün çalışmaları ve eskiz arşivi.</h2>
+          <h2>Seçilmiş ürün çalışmaları.</h2>
         </div>
 
         <div class="project-carousel" aria-label="Portfolyo carousel">
@@ -181,10 +186,20 @@
         </div>
       </section>
 
-      <section id="contact" class="contact">
+      <section id="contact" class="contact reveal">
         <p class="section-kicker">İletişim</p>
         <h2>Ürün tasarımı ve görselleştirme çalışmaları için iletişime geçebilirsiniz.</h2>
-        <a class="button primary" href="mailto:yagmur.sugur13@gmail.com">yagmur.sugur13@gmail.com</a>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:yagmur.sugur13@gmail.com">Mail gönder</a>
+          <a
+            class="button secondary"
+            href="https://www.linkedin.com/in/yagmursugur/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
       </section>
     </main>
 
