@@ -1,7 +1,7 @@
 const projects = {
   pan: {
     title: "PAN",
-    count: 9,
+    count: 8,
     captions: [
       "PAN ürün ailesi",
       "PAN konsept sunumu",
@@ -11,7 +11,6 @@ const projects = {
       "PAN teknik anlatım",
       "PAN aksesuar ve ürün ailesi",
       "PAN eskiz ve araştırma",
-      "PAN render sunumu",
     ],
   },
   circlence: {
@@ -94,6 +93,75 @@ Object.entries(projects).forEach(([key, project]) => {
     container.append(button);
   }
 });
+
+const cards = Array.from(document.querySelectorAll("[data-project-card]"));
+const dotsContainer = document.querySelector(".carousel-dots");
+const prevButton = document.querySelector(".carousel-control.prev");
+const nextButton = document.querySelector(".carousel-control.next");
+const carousel = document.querySelector(".project-carousel");
+let activeIndex = 0;
+let timer;
+
+function wrap(index) {
+  return (index + cards.length) % cards.length;
+}
+
+function renderCarousel() {
+  cards.forEach((card, index) => {
+    card.classList.remove("is-active", "is-prev", "is-next", "is-far");
+    if (index === activeIndex) {
+      card.classList.add("is-active");
+    } else if (index === wrap(activeIndex - 1)) {
+      card.classList.add("is-prev");
+    } else if (index === wrap(activeIndex + 1)) {
+      card.classList.add("is-next");
+    } else {
+      card.classList.add("is-far");
+    }
+  });
+
+  Array.from(dotsContainer.children).forEach((dot, index) => {
+    dot.classList.toggle("is-active", index === activeIndex);
+    dot.setAttribute("aria-current", index === activeIndex ? "true" : "false");
+  });
+}
+
+function goTo(index) {
+  activeIndex = wrap(index);
+  renderCarousel();
+}
+
+function startTimer() {
+  window.clearInterval(timer);
+  timer = window.setInterval(() => goTo(activeIndex + 1), 5200);
+}
+
+cards.forEach((_, index) => {
+  const dot = document.createElement("button");
+  dot.type = "button";
+  dot.setAttribute("aria-label", `${index + 1}. projeye git`);
+  dot.addEventListener("click", () => {
+    goTo(index);
+    startTimer();
+  });
+  dotsContainer.append(dot);
+});
+
+prevButton.addEventListener("click", () => {
+  goTo(activeIndex - 1);
+  startTimer();
+});
+
+nextButton.addEventListener("click", () => {
+  goTo(activeIndex + 1);
+  startTimer();
+});
+
+carousel.addEventListener("mouseenter", () => window.clearInterval(timer));
+carousel.addEventListener("mouseleave", startTimer);
+
+renderCarousel();
+startTimer();
 
 closeButton.addEventListener("click", () => {
   lightbox.close();
