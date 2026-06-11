@@ -154,9 +154,9 @@ main {
 
 .mesh {
   border-radius: 999px;
-  filter: blur(58px);
+  filter: blur(68px);
   mix-blend-mode: screen;
-  opacity: 0.72;
+  opacity: 0.32;
   position: absolute;
   z-index: 0;
 }
@@ -199,8 +199,8 @@ main {
 
 .hero-panel {
   background:
-    radial-gradient(circle at 80% 16%, rgba(55, 199, 255, 0.24), transparent 17rem),
-    radial-gradient(circle at 18% 84%, rgba(255, 91, 183, 0.2), transparent 18rem),
+    radial-gradient(circle at 80% 16%, rgba(55, 199, 255, 0.12), transparent 17rem),
+    radial-gradient(circle at 18% 84%, rgba(255, 91, 183, 0.1), transparent 18rem),
     linear-gradient(135deg, rgba(30, 33, 43, 0.96), rgba(17, 19, 24, 0.99)),
     var(--hero);
   border: 1px solid rgba(255, 250, 240, 0.12);
