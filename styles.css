@@ -146,9 +146,10 @@ main {
   box-shadow: var(--shadow);
   color: var(--cream);
   display: grid;
+  align-items: start;
   gap: clamp(24px, 4vw, 50px);
   grid-template-columns: minmax(0, 1fr) 280px;
-  min-height: 500px;
+  min-height: 430px;
   overflow: visible;
   padding: clamp(28px, 5vw, 58px);
   position: relative;
@@ -156,9 +157,7 @@ main {
 }
 
 .hero-copy {
-  align-self: stretch;
-  display: flex;
-  flex-direction: column;
+  align-self: start;
   max-width: 660px;
 }
 
@@ -216,8 +215,8 @@ h3 {
 }
 
 .hero-actions {
-  margin-top: auto;
-  padding-top: 30px;
+  margin-top: 26px;
+  padding-top: 0;
 }
 
 .button {
@@ -257,12 +256,13 @@ h3 {
 }
 
 .identity-card {
-  align-self: end;
+  align-self: start;
   background: rgba(255, 250, 240, 0.1);
   border: 1px solid rgba(255, 250, 240, 0.16);
   border-radius: 28px;
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.18);
   display: grid;
+  height: fit-content;
   justify-items: center;
   padding: 20px;
   text-align: center;
@@ -687,18 +687,12 @@ h3 {
 }
 
 @media (max-width: 1080px) {
-  .hero-panel,
   .skill-board {
     grid-template-columns: 1fr;
   }
 
   .hero-panel {
     min-height: auto;
-  }
-
-  .identity-card {
-    justify-self: start;
-    max-width: 320px;
   }
 
   .program-grid {
@@ -757,7 +751,7 @@ h3 {
   }
 
   h1 {
-    font-size: 35px;
+    font-size: 31px;
   }
 
   h2 {
@@ -777,9 +771,49 @@ h3 {
     padding: 18px;
   }
 
+  .hero-panel {
+    gap: 14px;
+    grid-template-columns: minmax(0, 1fr) 118px;
+  }
+
+  .hero-copy p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 1.52;
+  }
+
+  .hero-actions {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .button {
+    font-size: 12px;
+    min-height: 39px;
+    padding: 0 14px;
+  }
+
   .identity-card {
-    justify-self: stretch;
-    max-width: none;
+    border-radius: 20px;
+    justify-self: end;
+    max-width: 118px;
+    padding: 12px;
+  }
+
+  .identity-card img {
+    border-width: 4px;
+    height: 76px;
+    margin-bottom: 10px;
+    width: 76px;
+  }
+
+  .profile-name {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .identity-card p:not(.profile-name) {
+    font-size: 10px;
+    line-height: 1.38;
   }
 
   .project-gallery {
@@ -788,6 +822,17 @@ h3 {
 
   .carousel-stage {
     min-height: 1080px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .identity-card {
+    justify-self: start;
+    max-width: 190px;
   }
 }
 
