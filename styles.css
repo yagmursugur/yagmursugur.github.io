@@ -212,7 +212,7 @@ main {
   gap: clamp(24px, 4vw, 50px);
   grid-template-columns: minmax(0, 1fr) 280px;
   min-height: 430px;
-  overflow: visible;
+  overflow: hidden;
   padding: clamp(28px, 5vw, 58px);
   position: relative;
   z-index: 1;
