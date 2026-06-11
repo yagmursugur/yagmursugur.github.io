@@ -24,7 +24,7 @@ const projects = {
     ],
   },
   scooter: {
-    title: "Scooter Parça Tasarımı",
+    title: "Scooter Tasarımı",
     count: 7,
     captions: [
       "Scooter parça çözümü",
@@ -57,6 +57,11 @@ const projects = {
       "Oran ve detay denemeleri",
       "İdeasyon panosu",
     ],
+  },
+  alias: {
+    title: "Alias Çizimleri",
+    count: 35,
+    captions: Array.from({ length: 35 }, (_, index) => `Alias çizimi ${index + 1}`),
   },
 };
 
