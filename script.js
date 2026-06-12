@@ -230,6 +230,36 @@ nextButton.addEventListener("click", () => {
 carousel.addEventListener("mouseenter", () => window.clearInterval(timer));
 carousel.addEventListener("mouseleave", startTimer);
 
+let touchStartX = 0;
+let touchStartY = 0;
+
+carousel.addEventListener(
+  "touchstart",
+  (event) => {
+    const touch = event.changedTouches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+    window.clearInterval(timer);
+  },
+  { passive: true }
+);
+
+carousel.addEventListener(
+  "touchend",
+  (event) => {
+    const touch = event.changedTouches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+
+    if (Math.abs(deltaX) > 44 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+      goTo(activeIndex + (deltaX < 0 ? 1 : -1));
+    }
+
+    startTimer();
+  },
+  { passive: true }
+);
+
 renderCarousel();
 startTimer();
 

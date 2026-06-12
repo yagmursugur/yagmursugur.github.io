@@ -879,11 +879,17 @@ h3 {
   .statement,
   .skills-section,
   .portfolio-section {
-    padding-block: 48px;
+    margin-top: 64px;
+    padding-block: 0;
+  }
+
+  .program-section {
+    margin-top: 64px;
   }
 
   .hero-shell {
     padding: 0;
+    margin-top: 24px;
   }
 
   .hero-panel,
@@ -901,13 +907,14 @@ h3 {
   }
 
   .hero-panel {
-    gap: 14px;
-    grid-template-columns: minmax(0, 1fr) 132px;
+    align-items: start;
+    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) 104px;
     min-height: auto;
   }
 
   .hero-copy {
-    min-height: 312px;
+    min-height: auto;
   }
 
   .hero-copy p:not(.eyebrow) {
@@ -927,28 +934,28 @@ h3 {
   }
 
   .identity-card {
-    border-radius: 20px;
+    border-radius: 18px;
     justify-self: end;
-    min-height: 312px;
-    max-width: 132px;
-    padding: 12px;
+    min-height: 0;
+    max-width: 104px;
+    padding: 10px;
   }
 
   .identity-card img {
     border-width: 4px;
-    height: 82px;
-    margin-bottom: 10px;
-    width: 82px;
+    height: 58px;
+    margin-bottom: 7px;
+    width: 58px;
   }
 
   .profile-name {
-    font-size: 13px;
-    margin-bottom: 6px;
+    font-size: 12px;
+    margin-bottom: 4px;
   }
 
   .identity-card p:not(.profile-name) {
-    font-size: 10px;
-    line-height: 1.38;
+    font-size: 9px;
+    line-height: 1.25;
   }
 
   .project-gallery {
@@ -958,13 +965,32 @@ h3 {
   }
 
   .carousel-stage {
-    min-height: 665px;
+    min-height: 590px;
+  }
+
+  .project-carousel {
+    cursor: grab;
+    gap: 0;
+    grid-template-columns: 1fr;
+    margin-inline: 0;
+    padding-inline: 0;
+    touch-action: pan-y;
+    user-select: none;
+    width: 100%;
+  }
+
+  .carousel-control {
+    display: none;
+  }
+
+  .carousel-dots {
+    grid-column: 1;
   }
 
   .project-card {
     gap: 18px;
-    min-height: 600px;
-    width: min(82vw, 360px);
+    min-height: 540px;
+    width: 100%;
   }
 
   .project-info {
@@ -1000,18 +1026,8 @@ h3 {
     max-width: 190px;
   }
 
-  .project-carousel {
-    grid-template-columns: 36px minmax(0, 1fr) 36px;
-  }
-
-  .carousel-control {
-    font-size: 24px;
-    height: 36px;
-    width: 36px;
-  }
-
   .project-card {
-    width: min(80vw, 310px);
+    width: 100%;
   }
 }
 
