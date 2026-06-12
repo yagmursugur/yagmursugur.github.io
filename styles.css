@@ -92,7 +92,7 @@ main {
 }
 
 .hero-shell {
-  padding: 58px 0;
+  padding: 58px;
   position: relative;
 }
 
@@ -158,7 +158,7 @@ main {
   border-radius: 999px;
   filter: blur(68px);
   mix-blend-mode: screen;
-  opacity: 0.22;
+  opacity: 0.10;
   position: absolute;
   z-index: 0;
 }
@@ -836,11 +836,14 @@ h3 {
     font-size: 28px;
   }
 
-  .hero-shell,
   .statement,
   .skills-section,
   .portfolio-section {
     padding-block: 48px;
+  }
+
+  .hero-shell {
+    padding: 48px;
   }
 
   .hero-panel,
