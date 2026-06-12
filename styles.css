@@ -908,8 +908,8 @@ h3 {
 
   .hero-panel {
     align-items: start;
-    gap: 12px;
-    grid-template-columns: minmax(0, 1fr) 104px;
+    gap: 22px;
+    grid-template-columns: 1fr;
     min-height: auto;
   }
 
@@ -934,28 +934,31 @@ h3 {
   }
 
   .identity-card {
-    border-radius: 18px;
-    justify-self: end;
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: 86px minmax(0, 1fr);
+    justify-self: stretch;
     min-height: 0;
-    max-width: 104px;
-    padding: 10px;
+    max-width: none;
+    padding: 14px;
+    text-align: left;
   }
 
   .identity-card img {
-    border-width: 4px;
-    height: 58px;
-    margin-bottom: 7px;
-    width: 58px;
+    border-width: 5px;
+    height: 86px;
+    margin-bottom: 0;
+    width: 86px;
   }
 
   .profile-name {
-    font-size: 12px;
-    margin-bottom: 4px;
+    font-size: 18px;
+    margin-bottom: 6px;
   }
 
   .identity-card p:not(.profile-name) {
-    font-size: 9px;
-    line-height: 1.25;
+    font-size: 13px;
+    line-height: 1.42;
   }
 
   .project-gallery {
@@ -993,6 +996,14 @@ h3 {
     width: 100%;
   }
 
+  .portfolio-section {
+    padding-bottom: 86px;
+  }
+
+  .contact {
+    margin-top: 42px;
+  }
+
   .project-info {
     padding: 0;
   }
@@ -1012,18 +1023,17 @@ h3 {
 }
 
 @media (max-width: 360px) {
-  .hero-panel {
-    grid-template-columns: 1fr;
-  }
-
   .hero-copy {
     min-height: auto;
   }
 
   .identity-card {
-    justify-self: start;
-    min-height: auto;
-    max-width: 190px;
+    grid-template-columns: 74px minmax(0, 1fr);
+  }
+
+  .identity-card img {
+    height: 74px;
+    width: 74px;
   }
 
   .project-card {
