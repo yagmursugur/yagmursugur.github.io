@@ -203,7 +203,6 @@ function goTo(index) {
 
 function startTimer() {
   window.clearInterval(timer);
-  timer = window.setInterval(() => goTo(activeIndex + 1), 5200);
 }
 
 cards.forEach((_, index) => {
@@ -212,19 +211,16 @@ cards.forEach((_, index) => {
   dot.setAttribute("aria-label", `${index + 1}. projeye git`);
   dot.addEventListener("click", () => {
     goTo(index);
-    startTimer();
   });
   dotsContainer.append(dot);
 });
 
 prevButton.addEventListener("click", () => {
   goTo(activeIndex - 1);
-  startTimer();
 });
 
 nextButton.addEventListener("click", () => {
   goTo(activeIndex + 1);
-  startTimer();
 });
 
 carousel.addEventListener("mouseenter", () => window.clearInterval(timer));
@@ -254,14 +250,11 @@ carousel.addEventListener(
     if (Math.abs(deltaX) > 44 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
       goTo(activeIndex + (deltaX < 0 ? 1 : -1));
     }
-
-    startTimer();
   },
   { passive: true }
 );
 
 renderCarousel();
-startTimer();
 
 const revealItems = document.querySelectorAll(
   ".reveal, .skill-board article, .program-grid article"
