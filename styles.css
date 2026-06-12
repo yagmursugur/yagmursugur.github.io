@@ -628,11 +628,11 @@ h3 {
 
 .project-gallery {
   display: grid;
-  gap: 10px;
+  gap: 12px;
   grid-template-columns: repeat(3, 1fr);
-  max-height: 480px;
+  max-height: 496px;
   overflow: auto;
-  padding: 2px 4px 2px 2px;
+  padding: 14px;
   scrollbar-color: rgba(17, 19, 24, 0.36) rgba(255, 250, 240, 0.32);
 }
 
@@ -987,7 +987,8 @@ h3 {
   .project-gallery {
     gap: 8px;
     grid-template-columns: 1fr;
-    max-height: 330px;
+    max-height: 350px;
+    padding: 12px;
   }
 
   .carousel-stage {
