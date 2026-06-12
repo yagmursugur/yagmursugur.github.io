@@ -222,10 +222,9 @@ main {
 
 .hero-copy {
   align-self: start;
-  display: flex;
-  flex-direction: column;
+  grid-column: 1;
+  grid-row: 1;
   max-width: 660px;
-  min-height: 278px;
   position: relative;
   z-index: 2;
 }
@@ -284,7 +283,10 @@ h3 {
 }
 
 .hero-actions {
-  margin-top: auto;
+  align-self: end;
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 0;
   padding-top: 0;
 }
 
@@ -331,6 +333,8 @@ h3 {
   border-radius: 28px;
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.18);
   display: grid;
+  grid-column: 2;
+  grid-row: 1 / span 2;
   height: fit-content;
   justify-items: center;
   padding: 20px;
@@ -367,6 +371,14 @@ h3 {
 .skills-section,
 .portfolio-section {
   padding: 76px 0;
+}
+
+.statement {
+  padding-bottom: 64px;
+}
+
+.skills-section {
+  padding-top: 46px;
 }
 
 .statement {
@@ -877,8 +889,12 @@ h3 {
   }
 
   .statement,
-  .skills-section,
   .portfolio-section {
+    margin-top: 64px;
+    padding-block: 0;
+  }
+
+  .skills-section {
     margin-top: 64px;
     padding-block: 0;
   }
@@ -914,6 +930,8 @@ h3 {
   }
 
   .hero-copy {
+    grid-column: 1;
+    grid-row: 1;
     min-height: auto;
   }
 
@@ -924,7 +942,9 @@ h3 {
 
   .hero-actions {
     gap: 8px;
-    margin-top: 20px;
+    grid-column: 1;
+    grid-row: 3;
+    margin-top: 0;
   }
 
   .button {
@@ -936,7 +956,10 @@ h3 {
   .identity-card {
     border-radius: 24px;
     display: grid;
+    gap: 18px;
+    grid-column: 1;
     grid-template-columns: 86px minmax(0, 1fr);
+    grid-row: 2;
     justify-self: stretch;
     min-height: 0;
     max-width: none;
@@ -1028,6 +1051,7 @@ h3 {
   }
 
   .identity-card {
+    gap: 14px;
     grid-template-columns: 74px minmax(0, 1fr);
   }
 
