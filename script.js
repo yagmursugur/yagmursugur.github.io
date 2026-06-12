@@ -70,6 +70,71 @@ const lightboxImage = document.querySelector("#lightboxImage");
 const lightboxCaption = document.querySelector("#lightboxCaption");
 const closeButton = document.querySelector(".lightbox-close");
 
+const approachStatements = [
+  {
+    title: "Fikirden ürüne, net bir tasarım akışı.",
+    text: "Eskiz, modelleme, render ve dokümantasyonu aynı ürün hikayesine bağlar.",
+  },
+  {
+    title: "Form, kullanım kadar anlaşılır olmalı.",
+    text: "Ergonomi, oran ve detay kararlarını sade bir ürün diliyle birleştirir.",
+  },
+  {
+    title: "Her çizgi üretilebilir bir karara yaklaşır.",
+    text: "Konseptleri yalnızca güzel değil, uygulanabilir ve okunabilir kurgular.",
+  },
+  {
+    title: "Malzeme, ürünün karakterini taşır.",
+    text: "Doku, yüzey ve renk seçimlerini kullanım senaryosuyla birlikte düşünür.",
+  },
+  {
+    title: "Sunum, tasarımın sessiz anlatıcısıdır.",
+    text: "Render ve sayfa düzenini fikri hızlı kavratacak netlikte kurar.",
+  },
+  {
+    title: "Detay, ürünün güven hissini oluşturur.",
+    text: "Birleşim, parça ve yüzey geçişlerini tasarımın doğal parçası olarak ele alır.",
+  },
+  {
+    title: "İyi ürün, karmaşayı sakinleştirir.",
+    text: "Kullanıcı ihtiyacını sadeleştirir, gereksiz görsel yükleri azaltır.",
+  },
+  {
+    title: "Eskiz, düşünmenin en hızlı yoludur.",
+    text: "Form alternatiflerini erken aşamada görünür ve tartışılabilir hale getirir.",
+  },
+  {
+    title: "Teknik süreç, yaratıcı fikri güçlendirir.",
+    text: "Modelleme ve dokümantasyonu fikrin üretime yaklaşan omurgası olarak kullanır.",
+  },
+  {
+    title: "Ürün hikayesi tek bir bütün gibi akmalı.",
+    text: "Araştırmadan sunuma kadar her çıktının aynı tasarım niyetini taşımasını hedefler.",
+  },
+];
+
+const statementRotator = document.querySelector(".statement-rotator");
+const statementTitle = document.querySelector("#statementTitle");
+const statementText = document.querySelector("#statementText");
+let statementIndex = 0;
+
+function rotateStatement() {
+  if (!statementRotator || !statementTitle || !statementText) return;
+  statementIndex = (statementIndex + 1) % approachStatements.length;
+  statementRotator.classList.add("is-switching");
+
+  window.setTimeout(() => {
+    const next = approachStatements[statementIndex];
+    statementTitle.textContent = next.title;
+    statementText.textContent = next.text;
+    statementRotator.classList.remove("is-switching");
+  }, 540);
+}
+
+if (statementRotator && statementTitle && statementText) {
+  window.setInterval(rotateStatement, 10000);
+}
+
 function openLightbox(src, caption) {
   lightboxImage.src = src;
   lightboxImage.alt = caption;

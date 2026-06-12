@@ -380,12 +380,43 @@ h3 {
   max-width: 620px;
 }
 
-.statement p:last-child {
+.statement-rotator {
+  min-height: 164px;
+  position: relative;
+}
+
+.statement-slide {
+  animation: statementCycle 100s ease-in-out infinite;
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+  transform: translateY(10px);
+  filter: blur(10px);
+  will-change: filter, opacity, transform;
+}
+
+.statement-slide:nth-child(1) { animation-delay: 0s; }
+.statement-slide:nth-child(2) { animation-delay: 10s; }
+.statement-slide:nth-child(3) { animation-delay: 20s; }
+.statement-slide:nth-child(4) { animation-delay: 30s; }
+.statement-slide:nth-child(5) { animation-delay: 40s; }
+.statement-slide:nth-child(6) { animation-delay: 50s; }
+.statement-slide:nth-child(7) { animation-delay: 60s; }
+.statement-slide:nth-child(8) { animation-delay: 70s; }
+.statement-slide:nth-child(9) { animation-delay: 80s; }
+.statement-slide:nth-child(10) { animation-delay: 90s; }
+
+.statement-slide h2 {
+  margin-inline: auto;
+  max-width: 620px;
+}
+
+.statement-slide p {
   color: var(--muted);
   font-size: 16px;
   line-height: 1.72;
   margin: 18px auto 0;
-  max-width: 720px;
+  max-width: 640px;
 }
 
 .section-heading {
@@ -761,6 +792,14 @@ h3 {
   to { transform: translateY(calc(-620px - 100%)) rotate(20deg); }
 }
 
+@keyframes statementCycle {
+  0% { opacity: 0; filter: blur(10px); transform: translateY(10px); }
+  1.2% { opacity: 1; filter: blur(0); transform: translateY(0); }
+  8.8% { opacity: 1; filter: blur(0); transform: translateY(0); }
+  10% { opacity: 0; filter: blur(10px); transform: translateY(-10px); }
+  100% { opacity: 0; filter: blur(10px); transform: translateY(-10px); }
+}
+
 @media (max-width: 1080px) {
   .skill-board {
     grid-template-columns: 1fr;
@@ -825,6 +864,7 @@ h3 {
 @media (max-width: 560px) {
   main,
   .site-header {
+    max-width: calc(100% - 22px);
     width: min(100% - 22px, 1180px);
   }
 
@@ -843,13 +883,21 @@ h3 {
   }
 
   .hero-shell {
-    padding: 48px;
+    padding: 0;
   }
 
   .hero-panel,
   .project-card {
     border-radius: 24px;
     padding: 18px;
+  }
+
+  .statement {
+    max-width: none;
+  }
+
+  .statement-rotator {
+    min-height: 190px;
   }
 
   .hero-panel {
